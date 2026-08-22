@@ -1,0 +1,23 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - run: npm ci || npm install
+      - name: Syntax check
+        run: node --check server.js
+      - name: Boot smoke test
+        run: |
+          (PORT=8081 node server.js &) && sleep 2
+          curl -fsS http://localhost:8081/ >/dev/null
+          curl -fsS http://localhost:8081/api/v1/test/test-user | grep -q "test user data api"
