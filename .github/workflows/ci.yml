@@ -15,7 +15,11 @@ jobs:
           cache: npm
       - run: npm ci || npm install
       - name: Syntax check
-        run: node --check server.js
+        run: |
+          node --check server.js
+          node --check app.js
+      - name: Tests
+        run: npm test --silent
       - name: Boot smoke test
         run: |
           (PORT=8081 node server.js &) && sleep 2
