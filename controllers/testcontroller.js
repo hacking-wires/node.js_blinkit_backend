@@ -1,15 +1,16 @@
-const testUserController=(req,res)=>{
-    try{
+const testUserController = (req, res) => {
+    try {
         res.status(200).send({
-            success:true,
-            message:"test user data api"
+            success: true,
+            message: "test user data api"
         });
-
-        
-
+    } catch (error) {
+        console.error('error in test-user api', error);
+        res.status(500).send({
+            success: false,
+            message: "internal server error"
+        });
     }
-    catch(error){
-        console.log('error in test api');
-    }
-}
-module.exports={testUserController};
+};
+
+module.exports = { testUserController };
