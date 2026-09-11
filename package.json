@@ -1,15 +1,16 @@
 {
-  "name": "food_app",
+  "name": "blinkit-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server":"nodemon server.js"
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["blinkit", "express", "backend"],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Node.js/Express backend for the Blinkit Flutter clone",
   "dependencies": {
     "colors": "^1.4.0",
     "cors": "^2.8.5",

@@ -1,6 +1,6 @@
-# food_app — Node.js API starter
+# Blinkit — Node.js Backend
 
-A minimal Express 5 backend scaffold, structured with the classic **routes → controllers** layout. It's the starting point for a food-ordering-style API.
+An Express 5 backend scaffold intended to serve the [Blinkit Flutter clone](https://github.com/hacking-wires/blinkit). Classic **routes → controllers** layout, with a `/api/v1/test/test-user` smoke endpoint so the frontend can confirm connectivity from day one.
 
 ## Stack
 
